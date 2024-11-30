@@ -1,28 +1,21 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, unused_local_variable
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:todo_app/pages/home_page.dart';
+import 'package:weather_app/pages/weather.dart';
 
-void main() async{
-
-  await Hive.initFlutter();
-
-  var box = await Hive.openBox("mybox");
-  
+void main(){
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   MyApp({super.key});
-
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "TO DO App",
+      title: "Weather App",
+      home: Weather(),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      theme: ThemeData.dark(),
     );
-    
   }
 }
